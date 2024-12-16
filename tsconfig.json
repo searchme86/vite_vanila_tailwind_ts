@@ -11,6 +11,7 @@
     "removeComments": true,
     "allowJs": true,
     "checkJs": true,
+    "typeRoots": ["src/types/global.d.ts"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
