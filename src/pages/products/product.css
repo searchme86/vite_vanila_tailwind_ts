@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 메뉴 영역 */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 10px;
+  background: #f8f9fa;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 10px;
+  scrollbar-width: none; /* Firefox에서 스크롤바 숨김 */
+}
+
+.menu::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge에서 스크롤바 숨김 */
+}
+
+.menu .list_menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu .item_menu {
+  margin-right: 10px;
+}
+
+.menu .text_menu {
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  background: #ddd;
+  color: #000;
+  border-radius: 5px;
+  user-select: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.menu .text_menu.active {
+  background: #007bff;
+  color: white;
+}
+
+/* 컨텐츠 리스트 영역 */
+.list_product-content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item_content {
+  border-bottom: 1px solid #ccc;
+}
+
+/* 컨텐츠 섹션 스타일 */
+.section_content {
+  height: 50vh; /* 높이를 50%로 설정 */
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* 모바일 뷰포트에 적합한 조정 */
+@media (max-width: 768px) {
+  .menu {
+    height: 50px;
+  }
+
+  .menu .text_menu {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .section_content {
+    font-size: 16px;
+  }
+}
