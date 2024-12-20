@@ -57,26 +57,32 @@ const EventHandlers = {
   // 이벤트 타입이 mouse 일 경우, touch 일 경우
   type: {
     mouse: {
+      handleStartEvent(e: userEvent, deviceType: deviceEventType) {
+        const { x, y } = getUserMouseTouchPoint(e, deviceType);
+        Integration.mixOverlayBackground(x, y);
+      },
       handleMoveEvent(e: userEvent, deviceType: deviceEventType) {
         try {
           // 현재 유저의 이벤트 x,y를 구함
           const { x, y } = getUserMouseTouchPoint(e, deviceType);
-          // 그런 x.y로 오버레이에 바인딩 하는데,
+          // 그런 x.y와 미리보기 할 이미지의 Rect 정보를 바탕으로
+          // 오버레이가 최대 가동가능한 x,y 값(xMovableLimitInImage,yMovableLimitInImage)을 구하고
           Overlay.position.setOverlayBound(x, y);
+          // 값(xMovableLimitInImage,yMovableLimitInImage), 오버레이 엘리먼트
+          // 이미지 정보를 모두 취합하여
+          // [최종] setOverlayPosition 메서드를 통해 오버레이 위치(position)를 정함
           Integration.mixOverlayBackground(x, y);
         } catch (error) {
           console.error('Error handling move event:', error);
         }
       },
-      handleStartEvent(e: userEvent, deviceType: deviceEventType) {
-        const { x, y } = getUserMouseTouchPoint(e, deviceType);
-        Integration.mixOverlayBackground(x, y);
-      },
       handleEndEvent() {
         Overlay.hideOverlay();
       },
+      // 이미지가 이미지 영역에서 벗어나면 오버레이를 사라지게 한다
+
       handleLeaveEvent() {
-        Overlay.hideOverlay(); // Hide the overlay when the mouse leaves the zoomImage area
+        Overlay.hideOverlay();
       },
     },
     touch: {
