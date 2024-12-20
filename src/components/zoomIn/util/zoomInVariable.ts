@@ -11,14 +11,14 @@ type DomType = {
 
 const events = {
   mouse: {
-    move: 'mousemove',
     start: 'mousedown',
+    move: 'mousemove',
     end: 'mouseup',
     leave: 'mouseleave',
   },
   touch: {
-    move: 'touchmove',
     start: 'touchstart',
+    move: 'touchmove',
     end: 'touchend',
     leave: 'touchend',
   },
