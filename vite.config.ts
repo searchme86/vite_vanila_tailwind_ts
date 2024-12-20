@@ -8,8 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        product: resolve(__dirname, './src/pages/product.html'),
-        test: resolve(__dirname, './src/pages/test.html'),
+        product: resolve(__dirname, './src/pages/products/product.html'),
+        zoom: resolve(__dirname, './src/pages/zoom/zoomInOut.html'),
       },
     },
   },
