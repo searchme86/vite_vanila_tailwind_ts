@@ -10,6 +10,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         product: resolve(__dirname, './src/pages/products/product.html'),
         zoom: resolve(__dirname, './src/pages/zoom/zoomInOut.html'),
+        prevSlider: resolve(__dirname, './src/pages/slider/prevSlider.html'),
       },
     },
   },

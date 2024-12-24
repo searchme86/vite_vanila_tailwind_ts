@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./prevSlider.css" />
+    <title>prevSliderts</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="list-wrapper">
+          <ul class="list-preview-image"></ul>
+        </div>
+      </div>
+      <div class="right">
+        <div class="current-info">
+          <span class="current-image-num"></span> /
+          <span class="total-image-num"></span>
+        </div>
+        <div class="slider-container">
+          <ul class="list-image"></ul>
+        </div>
+        <button type="button" class="prev-btn" aria-label="Previous Slide">
+          ←
+        </button>
+        <button type="button" class="next-btn" aria-label="Next Slide">
+          →
+        </button>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="../../components/slider/prevSlider/prevSliderInit.ts"
+    ></script>
+  </body>
+</html>
